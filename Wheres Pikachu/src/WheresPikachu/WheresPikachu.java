@@ -29,12 +29,11 @@ public class WheresPikachu {
         JFrame fStart = new JFrame();
         fStart.setSize(new Dimension(320, 220));
         JFrame fGame = new JFrame();
-        fGame.setSize(new Dimension(1000, 600));
+        fGame.setSize(new Dimension(1050, 620));
         StartPanel startPanel = new StartPanel();
         GamePanel gamePanel = new GamePanel();
         Model model = new Model();
         fStart.add(startPanel);
-        fGame.add(gamePanel);
         
         
         Controller controller = new Controller(startPanel, gamePanel, fStart, fGame, model);

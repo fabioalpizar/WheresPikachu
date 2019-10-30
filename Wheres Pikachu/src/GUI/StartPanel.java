@@ -42,7 +42,7 @@ public class StartPanel extends javax.swing.JPanel {
 
         jLabel3.setText("Number of extras");
 
-        numExtrasComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "100", "200", "300", "400", "500" }));
+        numExtrasComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "20", "50", "80", "100", "150", "200", "300", "400", "500" }));
 
         startBtn.setText("Start");
         startBtn.addActionListener(new java.awt.event.ActionListener() {

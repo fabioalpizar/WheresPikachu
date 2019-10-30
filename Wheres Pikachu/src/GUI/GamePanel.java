@@ -60,37 +60,44 @@ public class GamePanel extends javax.swing.JPanel {
 
             BufferedImage img = ImageIO.read(new File(pikachuImgs.get(i)));
             ImageIcon imageIcon = new javax.swing.ImageIcon(img);
+            this.pikachuLabels.get(i).setSize(100, 100);
             this.pikachuLabels.get(i).setIcon(imageIcon);
             this.pikachuLabels.get(i).setLocation(randomX, randomY);
             this.pikachuLabels.get(i).setName("pikachu" + i);
             this.pikachuLabels.get(i).setVisible(true);
             
-            this.add(this.pikachuLabels.get(i));
+            this.bgLabel.add(this.pikachuLabels.get(i));
         }
+        this.revalidate();
+        this.repaint();
+        this.updateUI();
     }
     
     public void setPokemon(List<String> pokemonImgs, int numImgs) throws IOException{
         
         Random rand = new Random();
-        
+        int randomX = rand.nextInt(800), randomY= rand.nextInt(500), randomI;
         for(int i = 0; i < numImgs; i++){
             
-            int randomX = rand.nextInt(800);
-            int randomY = rand.nextInt(500);
-            int randomI = rand.nextInt(pokemonImgs.size());
+            randomX = (randomX + rand.nextInt(800))%800;
+            randomY = (randomY + rand.nextInt(500))%500;
+            randomI = rand.nextInt(pokemonImgs.size());
             String randomMon = pokemonImgs.get(randomI);
             System.out.println(randomMon);
             
             JLabel label = new javax.swing.JLabel();
+            label.setSize(100, 100);
             BufferedImage img = ImageIO.read(new File(randomMon));
             label.setIcon(new javax.swing.ImageIcon(img));
             label.setLocation(randomX, randomY);
             label.setVisible(true);
             
-            this.add(label);
-            
-            label.repaint();
+            this.bgLabel.add(label);
+           
         }
+        this.revalidate();
+        this.repaint();
+        this.updateUI();
     }
     
     public void setNumPikachu(int numFound){
@@ -129,7 +136,7 @@ public class GamePanel extends javax.swing.JPanel {
 
         finishBtn.setText("Finish");
         add(finishBtn);
-        finishBtn.setBounds(918, 72, 63, 32);
+        finishBtn.setBounds(918, 72, 80, 32);
 
         jLabel2.setText("out of: ");
         add(jLabel2);

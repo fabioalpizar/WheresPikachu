@@ -86,6 +86,10 @@ public class Controller implements ActionListener{
             }
             
             fStart.setVisible(false);
+            gamePanel.updateUI();
+            gamePanel.setVisible(true);
+            fGame.add(gamePanel);
+            fGame.repaint();
             fGame.setVisible(true);
             
         }else if(e.getSource().equals(gamePanel.finishBtn)){
