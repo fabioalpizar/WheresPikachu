@@ -66,7 +66,7 @@ public class GamePanel extends javax.swing.JPanel {
             this.pikachuLabels.get(i).setName("pikachu" + i);
             this.pikachuLabels.get(i).setVisible(true);
             
-            this.bgLabel.add(this.pikachuLabels.get(i));
+            this.bgLabel.add(this.pikachuLabels.get(i), 1);
         }
         this.revalidate();
         this.repaint();
